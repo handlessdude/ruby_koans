@@ -39,6 +39,7 @@ class AboutObjects < Neo::Koan
 
     # THINK ABOUT IT:
     # What pattern do the object IDs for small integers follow?
+    # 1 3 5 ... 2n-1 2n+1 2n+3 ...
   end
 
   def test_clone_creates_a_different_object
