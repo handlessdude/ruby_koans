@@ -107,6 +107,8 @@ class AboutHashes < Neo::Koan
   def test_default_value_is_the_same_object
     hash = Hash.new([])
 
+    # в чем мем: hash[:one] и hash[:two] вернут ссылку на хранящийся где-то объект-дефолт_велью хэша hash
+    # и в след. двух строках мы добавляем в этот дефолтный объект новые значения
     hash[:one] << "uno"
     hash[:two] << "dos"
 
@@ -120,11 +122,12 @@ class AboutHashes < Neo::Koan
   def test_default_value_with_block
     hash = Hash.new {|hash, key| hash[key] = [] }
 
+    # as in js?
     hash[:one] << "uno"
     hash[:two] << "dos"
 
-    assert_equal __, hash[:one]
-    assert_equal __, hash[:two]
-    assert_equal __, hash[:three]
+    assert_equal ["uno"], hash[:one]
+    assert_equal ["dos"], hash[:two]
+    assert_equal [], hash[:three]
   end
 end
