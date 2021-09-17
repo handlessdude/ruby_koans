@@ -147,8 +147,8 @@ class AboutRegularExpressions < Neo::Koan
   # THINK ABOUT IT:
   #
   # Explain the difference between a character class ([...]) and alternation (|).
-  puts "landscandpe"[/[a]nd./]
-  puts "landscandpe"[/(a)nd./]
+  #puts "landscandpe"[/[a]nd./]
+  #puts "landscandpe"[/(a)nd./]
   #ands
   #ands
 
