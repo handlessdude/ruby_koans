@@ -119,4 +119,5 @@ class AboutIteration < Neo::Koan
   #
   # When you get to the "AboutSandwichCode" koan, recheck your answer.
 
+  #maybe File.open(filename)yields file descriptor file which we can use within given block?
 end
