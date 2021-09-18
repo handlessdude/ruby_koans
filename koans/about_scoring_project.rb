@@ -33,14 +33,8 @@ def score(dice)
   counts = []
   dice_sides = 6
   (dice_sides+1).times{counts << 0}
-  #puts
-  #p counts
   dice.each {|x| counts[x] += 1 }
-  #p counts
-
-
-  #p counts.map{|n| n.divmod(3) }
-  #items = counts.map{|n| counts[n].divmod(3) }
+=begin
   result = 0
   (1..dice_sides).each do |i|
     if i == 1
@@ -50,27 +44,22 @@ def score(dice)
     else
       result += counts[i] / 3 * i * 100
     end
-
-    #please help
-    #case i
-    #when 1
-    #  result +=    items[i][0]*1000 + items[i][1]*100
-    #when 5
-    #  result +=    items[i][0]*500 + items[i][1]*50
-    #else
-    #  result +=    i*items[i][0]*100
-    #end
-    #result += i * (   items[i][0]*100*(i==1? 10 : 1) + items[i][1]*(i==1? 100 : (i==5? 10 : 0)))
-    end
-  #  i = -1
-  #result = counts.map{|n| counts[n].divmod(3) }
-  #     .inject(0) do |sum, item|
-  #       i+=1
-  #       sum + i * (   item[0]*100*(i==1? 10 : 1) + item[1]*(i==1? 100 : (i==5? 10 : 0))) #please help
-  #end
-
-  #puts result, "hihi"
-  return result
+  end
+=end
+  #p counts
+  #p counts.map{|val| val.divmod(3) }
+  i = -1
+  result = counts.map{|val| val.divmod(3) }
+                 .inject(0) do |sum, item|
+         i+=1
+         sum + i * (item[0]*100*(i==1? 10 : 1) + item[1]*(
+           if i == 1
+             100
+           else
+             i == 5 ? 10 : 0
+           end)) # h e l p
+  end
+  result
 end
 
 class AboutScoringProject < Neo::Koan
