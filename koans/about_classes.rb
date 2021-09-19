@@ -182,10 +182,10 @@ class AboutClasses < Neo::Koan
 
   def test_all_objects_support_to_s_and_inspect
     array = [1,2,3]
-    p array
-    puts array
-    p "STRING"
-    puts "STRING"
+    #p array
+    #puts array
+    #p "STRING"
+    #puts "STRING"
 
     assert_equal "[1, 2, 3]", array.to_s
     assert_equal "[1, 2, 3]", array.inspect

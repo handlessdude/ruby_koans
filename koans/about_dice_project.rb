@@ -15,7 +15,8 @@ class DiceSet
     end
     #OR fun option
     #@values = (1..sz).map { block_given? ? yield : rand(1..6) }
-    p self
+
+    #p self
   end
   def get_self
     self
