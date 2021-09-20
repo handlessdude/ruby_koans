@@ -123,7 +123,7 @@ class AboutMethods < Neo::Koan
       exception = assert_raise(NoMethodError) do
         self.my_private_method
       end
-      #assert_match "private method `my_private_method' called for #<AboutMethods:0x000000000521e120>", exception.message
+      assert_match /method `my_private_method'/, exception.message
     end
   end
 

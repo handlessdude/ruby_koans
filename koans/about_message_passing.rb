@@ -81,7 +81,8 @@ class AboutMessagePassing < Neo::Koan
     exception = assert_raise(NoMethodError) do
       typical.foobar
     end
-    p exception.message
+    #p exception.message
+    #puts exception.message
     assert_match(/foobar/, exception.message)
   end
 
@@ -91,6 +92,8 @@ class AboutMessagePassing < Neo::Koan
     exception = assert_raise(NoMethodError) do
       typical.method_missing(:foobar)
     end
+    #p exception.message
+    #puts exception.message
     assert_match(/foobar/, exception.message)
 
     # THINK ABOUT IT:
